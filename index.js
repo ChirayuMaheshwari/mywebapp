@@ -17,6 +17,12 @@ client.connect();
 
 
 app.get('/',function(req,res){
+    client.query('create table my_info(name varchar(200));',function(err,res){
+        if(err)
+        console.log("error occured");
+        else
+        console.log("successful");
+    })
     res.render(__dirname+'//views//index.ejs');
     //res.send({name:'chirayu'});
 })
