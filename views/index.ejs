@@ -2,11 +2,48 @@
     <head>
         <title>This is title</title>
     </head>
-    <body>
-        <p>This is body</p>
-        <form action="/data" method="post">
-        <input type="text" name="name" placeholder="enter name">
-        <button type="submit">Submit</button>
+    <body> 
+        <div style="display:none" id="signup">
+            <form action="/user_page" method="post" >
+                <input type="name" name="username" placeholder="enter username"><br>
+                <input type="password" name="password" placeholder="enter password"><br>
+                <button type="submit">Submit</button>
+                
+            </form>
+            <button onclick="close_window('signup')">close</button>
+        </div>
+        <div style="display:none" id="login">
+            <form action="/user_page" method="post" >
+                <input type="name" name="username" placeholder="enter username"><br>
+                <input type="password" name="password" placeholder="enter password"><br>
+                <button type="submit">Submit</button>
+            </form>
+            <button onclick="close_window('login')">close</button>
+        </div>
+                <p>This is body</p>
+        <button onclick="signup()">signup</button>
+        <button onclick="login()">login</button>
         </form>
+
+
+        <script>
+            function close_window(id)
+            {
+                console.log(id);
+                document.getElementById(id).style.display="none";
+                console.log(document.getElementById(id).style)
+            }
+            function signup()
+            {
+                document.getElementById("signup").style.display="block"
+                console.log("signup");
+            }
+            function login()
+            {
+                document.getElementById("login").style.display="block" 
+                console.log("login")
+            }
+            
+        </script>
     </body>
 </html>
