@@ -6,7 +6,7 @@ app.listen(process.env.PORT||8080)
 const { Client } = require('pg');
 
 const client = new Client({
-  connectionString: process.env.DATABASE_URL,
+  connectionString: process.env.DATABASE_URL|| 'postgres://postgres:@localhost:5432/postgres',
   ssl: {
     rejectUnauthorized: false
   }
@@ -14,14 +14,14 @@ const client = new Client({
 
 client.connect();
 
-
+console.log(client);
 
 app.get('/',function(req,res){
-    client.query('create table my_info(name varchar(200));',function(err,res){
+    client.query("insert into my_info(name) values($1);",['chirayu'],function(err,result){
         if(err)
-        console.log("error occured");
+        console.log(err);
         else
-        console.log("successful");
+        console.log(result);
     })
     res.render(__dirname+'//views//index.ejs');
     //res.send({name:'chirayu'});
