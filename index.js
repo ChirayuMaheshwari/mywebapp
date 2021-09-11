@@ -4,6 +4,7 @@ app.set('view engine','ejs');
 app.listen(process.env.PORT||8080)
 var bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({extended: false}));
+app.use( express.static( "public" ) );
 const { Client } = require('pg');
 const client = new Client({
   connectionString: process.env.DATABASE_URL|| 'postgres://postgres:@localhost:5432/postgres',
