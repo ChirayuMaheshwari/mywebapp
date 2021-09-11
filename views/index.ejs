@@ -1,49 +1,30 @@
 <html>
     <head>
         <title>This is title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     </head>
-    <body> 
-        <div style="display:none" id="signup">
-            <form action="/user_page" method="post" >
-                <input type="name" name="username" placeholder="enter username"><br>
-                <input type="password" name="password" placeholder="enter password"><br>
-                <button type="submit">Submit</button>
-                
-            </form>
-            <button onclick="close_window('signup')">close</button>
-        </div>
-        <div style="display:none" id="login">
-            <form action="/user_page" method="post" >
-                <input type="name" name="username" placeholder="enter username"><br>
-                <input type="password" name="password" placeholder="enter password"><br>
-                <button type="submit">Submit</button>
-            </form>
-            <button onclick="close_window('login')">close</button>
-        </div>
-                <p>This is body</p>
-        <button onclick="signup()">signup</button>
-        <button onclick="login()">login</button>
-        </form>
-
-
-        <script>
-            function close_window(id)
-            {
-                console.log(id);
-                document.getElementById(id).style.display="none";
-                console.log(document.getElementById(id).style)
-            }
-            function signup()
-            {
-                document.getElementById("signup").style.display="block"
-                console.log("signup");
-            }
-            function login()
-            {
-                document.getElementById("login").style.display="block" 
-                console.log("login")
-            }
+    <body style="margin:2%;"> 
+        
+        <nav class="navbar navbar-expand-lg  navbar-dark bg-warning">
             
-        </script>
+            
+              <ul class="navbar-nav " style="margin-left: auto;">
+                <li class="nav-item px-3" >
+                    <button type="button" class="btn btn-primary ">About Me</button>
+                </li>
+                <li class="nav-item px-3">
+                    <button type="button" class="btn btn-primary">Contact Me</button>
+                </li>
+                
+              </ul>
+            
+      
+          </nav>
+        
+    
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
     </body>
 </html>
